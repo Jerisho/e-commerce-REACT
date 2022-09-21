@@ -1,0 +1,30 @@
+.productView {
+    flex-flow: column nowrap;
+    width: 200px;
+    height: 300px;
+    margin: 5px 5px;
+    border: solid 1px var(--colorBackHeader);
+}
+
+.productView img{
+    height: 150px;
+    width: 150px;
+}
+
+.productView h6{
+    height: 5px;
+    text-align: center;
+}
+
+.productView p{
+    height: 20px;
+    font: bold
+}
+
+.productView button{
+    height: 20px;
+}
+
+.productView button:hover{
+    cursor: pointer;
+}

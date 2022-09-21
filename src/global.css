@@ -1,0 +1,16 @@
+:root { 
+    --colorBackHeader: rgb(108, 44, 218);
+    --colorHoverLinks: rgb(197, 63, 166);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

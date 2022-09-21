@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: var(--colorBackHeader);
+    justify-content: space-between;
+    height: 90px;
+    padding: 0 10px;
+}
+
+    .div-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .div-categoryNav{
+        flex: 2 0 auto;
+    }
+
+    .div-cartNav{
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }

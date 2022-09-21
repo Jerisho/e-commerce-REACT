@@ -1,0 +1,10 @@
+.logo-page{
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+.logo-page img{
+        width: 90px;
+    }
