@@ -1,0 +1,40 @@
+.productView {
+    flex-flow: column nowrap;
+    width: 200px;
+    height: 300px;
+    margin: 5px 7px;
+    border: solid 1px var(--colorBackHeader);
+}
+
+    .productView p{
+        height: 20px;
+        font: bold
+    }
+
+    .productView button{
+        height: 20px;
+    }
+
+    .productView button:hover{
+        cursor: pointer;
+    }
+
+.linkItem {
+    flex-flow: column nowrap;
+    text-decoration: none;
+    color: black;
+}
+
+.linkItem:hover{
+    color: var(--colorBackHeader)
+}
+
+    .linkItem img{
+        height: 150px;
+        width: 150px;
+    }
+
+    .linkItem h6{
+        height: 5px;
+        text-align: center;
+    }

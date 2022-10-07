@@ -1,4 +1,11 @@
-.container-products{
+.container-body{
+    padding: 0 126px;
     flex-flow: row wrap;
     margin-top: 10px;
+}
+
+.container-products{
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-left: 99.80px;
 }

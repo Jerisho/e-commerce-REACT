@@ -3,6 +3,11 @@
     --colorHoverLinks: rgb(197, 63, 166);
 }
 
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 body {
     margin: 0;
     padding: 0;
