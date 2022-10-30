@@ -8,7 +8,7 @@ de las entregas solicitadas en CoderHouse, estaré actualizando a fondo el mismo
 
 ## Caracteristicas
 
-El proyecto consiste en realizar un e-commerce que se asemeje a un proyecto real dentro de una empresa .
+El proyecto consiste en realizar un e-commerce que se asemeje a un proyecto real dentro de una empresa, esto es solamente la versión para la entrega! .
 
 ## Iniciar proyecto
 
