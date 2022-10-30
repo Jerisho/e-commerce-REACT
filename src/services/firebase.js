@@ -1,4 +1,69 @@
-const data = [
+//CARGAR EL DETAIL DE LOS ITEMS//
+import { initializeApp } from "firebase/app";
+import { addDoc, 
+        collection, 
+        doc, 
+        getDocs, 
+        getFirestore, 
+        query,
+        getDoc,
+        where} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD89oiBHMrenRMIdftd6sQy6iL_q12irq0",
+  authDomain: "first-react-work.firebaseapp.com",
+  projectId: "first-react-work",
+  storageBucket: "first-react-work.appspot.com",
+  messagingSenderId: "51210430588",
+  appId: "1:51210430588:web:b92e4ec6b65ce697db81f9"
+};
+
+const firebaseAPI = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseAPI)
+
+export const getProducts = async () => {
+    const collectionProducts = collection(db, "products")
+    let result = await getDocs(collectionProducts);
+    let data = result.docs.map( doc =>{
+        return {id: doc.id, ...doc.data()};
+    })
+    return data;
+}
+
+export const getProductId = async (id) => {
+try {
+    const docRef = doc(db, "products", id);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+    return {id: docSnap.id, ...docSnap.data()}
+    }
+    else{
+        throw new Error("No se encontró el ID especificado.")
+    }
+    }
+catch(errorMsg){
+    console.error(errorMsg)
+}
+}
+
+export const getProductCategory = async (categoryID) => {
+    const collectionProducts = collection(db, "products");
+    const queryCat = query(collectionProducts, where("type", "==", categoryID));
+    let results  = await getDocs(queryCat);
+    let dataCategory = results.docs.map( doc =>{
+        return {id: doc.id, ...doc.data()};
+    })
+    return dataCategory;
+} 
+
+export const  createOrder = async (orderData) => {
+    const docOrder = collection(db, "orders");
+    let newOrder = await addDoc(docOrder, orderData);
+    return newOrder.id;
+}
+
+ const letUpDb  = async () => {
+    const data = [
         {
             id: 1,
             title: "Motorola G42 4+64GB Verde Atlantico", 
@@ -79,7 +144,7 @@ const data = [
         {
             id: 8,
             title: "Motorola Hawaii + G22 AZUL 4+128GB",
-            img: "https://cuyodigital.com/cuyo/wp-content/uploads/2021/05/iphone-11-128gb-4gb-pantalla-6_1-camara-dual-12mp-lila-nnet-67240-31.jpeg",
+            img: "https://www.megatone.net/Images/Articulos/zoom2x/209/02/KIT2232MOT_5.jpg",
             price: 47999,
             detail: "",
             stock: 9,
@@ -101,7 +166,7 @@ const data = [
         {
             id: 10,
             title: "Samunng Galaxy A23 128GB+4GB Negro",
-            img: "https://cuyodigital.com/cuyo/wp-content/uploads/2021/05/iphone-11-128gb-4gb-pantalla-6_1-camara-dual-12mp-lila-nnet-67240-31.jpeg",
+            img: "https://romitech.com.gt/web/image/product.template/1775/image_256",
             price: 269.999,
             detail: "",
             stock: 3,
@@ -145,7 +210,7 @@ const data = [
         {
             id: 14,
             title: "Samsung Galaxy A53 5G 128+6GB Negro",
-            img: "https://cuyodigital.com/cuyo/wp-content/uploads/2021/05/iphone-11-128gb-4gb-pantalla-6_1-camara-dual-12mp-lila-nnet-67240-31.jpeg",
+            img: "https://www.condorinformatica.uy/imgs/productos/productos31_11502.jpg",
             price: 122999,
             detail: "",
             stock: 3,
@@ -153,27 +218,12 @@ const data = [
             type: "samsung"
         }
 ]
+    const docRef = collection(db, "products")
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(data), 2000)
-    })
+    for(let product of data){
+        delete(product.id)
+        await addDoc(docRef,product);
+    }
 }
 
-export const getProductId = (id) => {
-    return new Promise ((resolve) => {
-        let productId = data.find( product => {
-            return product.id === parseInt(id)
-        })
-        setTimeout(() => resolve(productId), 500)
-    })
-}
-
-export const getProductCategory = (category) => {
-    return new Promise ((resolve) => {
-        let productCategory = data.filter( product => {
-            return product.type === category
-        })
-        setTimeout(() => resolve(productCategory), 500)
-    })
-}
+export default letUpDb;

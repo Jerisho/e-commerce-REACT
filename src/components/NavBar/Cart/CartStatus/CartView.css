@@ -1,0 +1,23 @@
+.containerCartView{
+    flex-flow: column nowrap;
+}
+.tableCart {
+    border: 2px solid var(--colorBackHeader);
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    .tableCart th{
+        border: 2px solid var(--colorBackHeader);
+        padding: 5px;
+    }
+
+    .tableCart td{
+        border: 2px solid var(--colorBackHeader);
+        padding: 0 5px;
+    }
+
+    .tableCart img {
+        height: 100px;
+    }

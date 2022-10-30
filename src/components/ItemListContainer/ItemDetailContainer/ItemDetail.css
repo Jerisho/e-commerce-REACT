@@ -1,20 +1,57 @@
 .productViewDetail {
     flex-flow: column nowrap;
-    width: 300px;
-    height: 500px;
+    width: 700px;
+    height: 100%;
     margin: 15px 7px;
     border: solid 1px var(--colorBackHeader);
 }
 
     .productViewDetail p{
-        height: 20px;
+        height: 50px;
         font: bold
     }
 
-    .productViewDetail button{
-        height: 20px;
+    .productViewDetail img {
+        width: 256px;
     }
 
-    .productViewDetail button:hover{
-        cursor: pointer;
+
+.containerInfo{
+    flex-flow: row nowrap;
+    height: 100%;
+}
+
+.containerDetails {
+    
+    flex-flow: column nowrap;
+    height: 100%;
+}
+
+.containerAbout {
+    width: 100%;
+    font-size: 2rem;
+    height: 10px;
+    justify-content: flex-start;
+}
+
+.containerDetailPrice {
+    height: 100%;
+    flex-flow: column nowrap;
+}
+
+    .containerDetailPrice p {
+        height: 100%;
     }
+
+    .classPrice {
+        font-weight: bold ;
+    }
+.containerBtn {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+

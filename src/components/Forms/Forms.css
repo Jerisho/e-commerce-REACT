@@ -1,0 +1,24 @@
+.formStyle {
+    flex-flow: column nowrap;
+    }
+
+.inputsForm {
+    margin-bottom: 5px;
+    border: 1px solid var(--colorBackHeader);
+}
+
+.divContainerInputs {
+    width: 300px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.containerTitleInputs{
+    background-color: var(--colorBackHeader);
+    width: 400px;
+    height: 50px;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

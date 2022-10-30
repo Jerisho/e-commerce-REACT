@@ -1,6 +1,9 @@
 :root { 
     --colorBackHeader: rgb(108, 44, 218);
     --colorHoverLinks: rgb(197, 63, 166);
+    --colorButtons:  rgba(255, 123, 224, 0.726);
+    --colorButtonsActive:  rgba(248, 82, 209, 0.822);
+    --colorBackDetail:  rgb(108, 44, 218)
 }
 
 .main {
@@ -18,4 +21,44 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.btnStyle {
+    border: none;
+    text-decoration: none;
+    background-color: var(--colorButtons);
+    border-radius: 10px;
+    margin-bottom: none;
+    cursor: pointer;
+}
+
+.btnStyle:active{
+    background-color: var(--colorButtonsActive);
+}
+
+.linkDefault {
+    text-decoration: none;
+}
+
+.linkDefault:active{
+    color: rgb(69, 69, 175);
+}
+
+.divBorder{
+    display: flex;
+    width: auto;
+    flex-flow: column nowrap;
+    padding: 5px 30px;
+    height: 100%;
+    margin: 15px 7px;
+    border: solid 1px var(--colorBackHeader);
+}
+
+.containerTitle {
+    height: 70px;
+    width: 95%;
+    font-size: 30px;
+    margin-top: 10px;
+    color: white;
+    background-color: var(--colorBackHeader);
 }
